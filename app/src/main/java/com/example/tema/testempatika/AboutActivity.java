@@ -47,12 +47,14 @@ public class AboutActivity extends ActionBarActivity {
 
         //Config
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
-            .defaultDisplayImageOptions(options)
+                .defaultDisplayImageOptions(options)
                 .build();
         ImageLoader.getInstance().init(config);
+        imageLoader.clearMemoryCache();
+        imageLoader.clearDiscCache();
 
         //Show circle image
-        imageLoader.displayImage("drawable://" + R.drawable.about, imageView);
+        imageLoader.displayImage("drawable://" + R.mipmap.ic_launcher, imageView);
     }
 
     @Override
