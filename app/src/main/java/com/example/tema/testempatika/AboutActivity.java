@@ -2,6 +2,8 @@ package com.example.tema.testempatika;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -31,6 +34,11 @@ public class AboutActivity extends ActionBarActivity {
 
         ImageLoader imageLoader = ImageLoader.getInstance(); // Get instance of Universal Image Loader
         final ImageView imageView = (ImageView)findViewById(R.id.logo); // Find imageView
+        final Button callButton = (Button)findViewById(R.id.callButton); // Find imageView
+        final Button emailButton = (Button)findViewById(R.id.emailButton); // Find imageView
+
+        callButton.getBackground().setColorFilter(Color.parseColor("#257567"), PorterDuff.Mode.MULTIPLY);
+        emailButton.getBackground().setColorFilter(Color.parseColor("#257567"), PorterDuff.Mode.MULTIPLY);
 
         //Options for display images
         DisplayImageOptions options = new DisplayImageOptions.Builder()
