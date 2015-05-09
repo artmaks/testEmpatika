@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/accent"
+        android:state_pressed="true" >
+        <corners android:radius="3dip" />
+    </item>>
+    <item android:drawable="@color/primary"
+        android:state_focused="true">
+        <corners android:radius="3dip" />
+    </item>
+    <item android:drawable="@color/primary">
+        <corners android:radius="3dip" />
+    </item>
+</selector>

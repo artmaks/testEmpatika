@@ -4,4 +4,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_general">GeneralActivity</string>
+
+    <string name="about_title">О компании</string>
+    <string name="company_text">Мы в Компании гордимся нашей едой: отбираем только свежие продукты, с любовью готовим еду и стараемся доставить ее быстро
+        \n\nНадеемся, вы оцените качество и станете нашими друзьями.
+        \n\nМы работаем без выходных, с 12:00 до 22:30</string>
+    <string name="copyright">© 2015 company_name</string>
+    <string name="companyName">Company Name</string>
+    <string name="callButtonText">Звоните нам</string>
+    <string name="emailButtonText">Пишите нам</string>
+
+    <color name="primary">#257567</color>
+    <color name="accent">#11594C</color>
 </resources>

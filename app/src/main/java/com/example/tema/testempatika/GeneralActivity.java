@@ -1,9 +1,21 @@
 package com.example.tema.testempatika;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 
 public class GeneralActivity extends ActionBarActivity {
@@ -12,6 +24,25 @@ public class GeneralActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        String url = "http://www.hse-timetable.ru/index.php?table=%D0%BF%D0%B8_203%D0%BF%D0%B8_2";
+
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("DebugEmpatika", response.toString());
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("DebugEmpatika", "Error");
+            }
+        });
+        queue.add(jsObjRequest);
     }
 
     @Override
@@ -34,5 +65,15 @@ public class GeneralActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Открыть окно "О программе"
+     *
+     * @param v
+     */
+    public void openAbout(View v) {
+        Intent intent = new Intent(GeneralActivity.this, AboutActivity.class);
+        startActivity(intent);
     }
 }
