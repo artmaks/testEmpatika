@@ -25,24 +25,6 @@ public class GeneralActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        String url = "http://www.hse-timetable.ru/index.php?table=%D0%BF%D0%B8_203%D0%BF%D0%B8_2";
-
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
-            @Override
-            public void onResponse(JSONObject response) {
-                Log.d("DebugEmpatika", response.toString());
-            }
-        }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("DebugEmpatika", "Error");
-            }
-        });
-        queue.add(jsObjRequest);
     }
 
     @Override

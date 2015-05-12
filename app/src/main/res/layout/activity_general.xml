@@ -9,7 +9,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="About Company"
         android:id="@+id/button"
         android:onClick="openAbout"
         android:layout_centerVertical="true"
